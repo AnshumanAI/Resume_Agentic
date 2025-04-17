@@ -4,11 +4,11 @@ This project provides an end-to-end, agentic pipeline for automatically processi
 
 ## Features
 
-Email Retrieval: Connects to a Gmail inbox via IMAP and downloads new PDF/DOCX resume attachments.
+* Email Retrieval: Connects to a Gmail inbox via IMAP and downloads new PDF/DOCX resume attachments.
 
-Parsing & Masking: Extracts plaintext from each resume and redacts personal email addresses to ensure blind review.
+* Parsing & Masking: Extracts plaintext from each resume and redacts personal email addresses to ensure blind review.
 
-Heuristic Scoring: Computes sub-scores for:
+* Heuristic Scoring: Computes sub-scores for:
 
 Work Experience
 
@@ -20,17 +20,17 @@ Job Description (JD) match via TF‑IDF similarity
 
 Formatting & Clarity
 
-LLM Feedback Generation: Uses a local Hugging Face model (e.g., Falcon) to craft concise, professional feedback emails based on the computed scores.
+* LLM Feedback Generation: Uses a local Hugging Face model (e.g., Falcon) to craft concise, professional feedback emails based on the computed scores.
 
-Email Delivery: Sends the generated feedback back to each candidate via SMTP.
+* Email Delivery: Sends the generated feedback back to each candidate via SMTP.
 
-Logging & Tracking: Maintains a CSV log of processed resumes and email statuses.
+* Logging & Tracking: Maintains a CSV log of processed resumes and email statuses.
 
 ## Repository Structure
 
-Assignment_agentic.ipynb # Main pipeline notebook
-requirements.txt       # Python dependencies
-README.md              # This file
+* Assignment_agentic.ipynb # Main pipeline notebook
+* requirements.txt       # Python dependencies
+* README.md              # This file
 
 ## Requirements
 
@@ -44,12 +44,12 @@ Hugging Face account (for private models) or any open-source LLM ID
 
 ## Installation and Usage (Google Colab)
 
-Prepare credentials:
+1- Prepare credentials:
 
 Create a file secrets.json in your working directory with the following structure:
 
 {
-  "email": "you@gmail.com",
+  "email": "you@gmail[dot]com",
   "app_password": "your_app_password",
   "hf_model_id": "tiiuae/falcon-7b",
   "hf_token": "hf_xxx"
@@ -57,13 +57,13 @@ Create a file secrets.json in your working directory with the following structur
 
 Important: Do not commit secrets.json to version control.
 
-Open notebooks/Asignment_agentic.ipynb in Google Colab.
+2- Open notebooks/Asignment_agentic.ipynb in Google Colab.
 
-Select Runtime → Change runtime type → GPU.
+3- Select Runtime → Change runtime type → GPU.
 
-Upload your secrets.json file via the Files sidebar.
+4- Upload your secrets.json file via the Files sidebar.
 
-Run the cells in order:
+5- Run the cells in order:
 
 Cell 1: Install dependencies
 
